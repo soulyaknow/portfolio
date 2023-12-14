@@ -3,6 +3,8 @@ import TodoApp from '../components/TodoApp.vue'
 import AppsPage from '../views/AppsPage.vue';
 import HomePage from '../views/HomePage.vue'
 import AlarmClockApp from '../components/AlarmClockApp.vue'
+import ChatApp from '../components/ChatApp.vue'
+import Register from '../components/RegisterComponent.vue'
 
 const routes = [
     {
@@ -24,6 +26,16 @@ const routes = [
       path: '/alarmclockapp',
       name: 'Alarmclockapp',
       component: AlarmClockApp 
+    },
+    {
+      path: '/chatapp',
+      name: 'Chatapp',
+      component: ChatApp 
+    },
+    {
+      path: '/reg',
+      name: 'Register',
+      component: Register 
     },
 
   ]

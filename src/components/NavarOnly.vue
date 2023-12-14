@@ -1,7 +1,6 @@
 <template>
-    <!--navar-->
     <nav>
-        <div class="max-w-full flex flex-wrap items-center justify-between mx-auto md:p-4 md:pr-0 md:pl-0 pr-4 pl-2 h-full bg-slate-950">
+        <div class="max-w-full flex flex-wrap items-center justify-between mx-auto md:p-4 md:pr-0 md:pl-0 pr-4 pl-2 h-full transparent">
             <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse md:pl-4">
                 <img src="../assets/logo.jpg" class="md:h-16 h-16 rounded-2xl" alt="RanLogo">
             </a>
@@ -15,18 +14,18 @@
             <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 h-full" id="navbar-sticky"
                 :class="{ visible: navStore.navarState }">
                 <ul class="flex flex-col p-3 md:p-0 md:mt-0 font-medium rounded-lg md:space-x-10 rtl:space-x-reverse 
-                md:flex-row md:transparent dark:bg-gray-800 md:h-full text-white md:bg-transparent bg-slate-950 h-[180px]">
+                md:flex-row md:transparent dark:bg-gray-800 md:h-full text-white bg-color h-[180px]">
                     <li>
-                        <a href="/" class="block py-2 px-3 md:hover:transparent hover:bg-green-300 rounded-2xl hover:text-black">Home</a>
+                        <router-link to="/" class="block py-2 px-3 md:hover:transparent hover:bg-green-300 rounded-2xl hover:text-black">Home</router-link>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 md:hover-transparent hover:bg-green-300 rounded-2xl hover:text-black">About</a>
+                        <router-link to="#" class="block py-2 px-3 md:hover-transparent hover:bg-green-300 rounded-2xl hover:text-black">About</router-link>
                     </li>
                     <li>
-                        <a href="/apps" class="block py-2 px-3 md:hover-transparent hover:bg-green-300 rounded-2xl hover:text-black">Apps</a>
+                        <router-link to="/apps" class="block py-2 px-3 md:hover-transparent hover:bg-green-300 rounded-2xl hover:text-black">Apps</router-link>
                     </li>
                     <li>
-                        <a href="#" class="block py-2 px-3 md:hover-transparent hover:bg-green-300 rounded-2xl hover:text-black">Contact</a>
+                        <router-link to="#" class="block py-2 px-3 md:hover-transparent hover:bg-green-300 rounded-2xl hover:text-black">Contact</router-link>
                     </li>
                 </ul>
             </div>
@@ -50,5 +49,10 @@ a{
 .navar{
     background-image: linear-gradient(to right, #1f3f4d, #1d3d4d, #1b3b4e, #1a384e, #1a364e, #1c344f, #1f334f, #23314f, #293050, #2f2e50, #362c4f, #3c2a4e);
     background-color: #1e263b;
+}
+
+.bg-color {
+  background-image: linear-gradient(to right, #1f3f4d, #1d3d4d, #1b3b4e, #1a384e, #1a364e, #1c344f, #1f334f, #23314f, #293050, #2f2e50, #362c4f, #3c2a4e);
+  background-color: #1e263b;
 }
 </style>

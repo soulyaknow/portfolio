@@ -1,17 +1,16 @@
 <template>
-    <div class="h-screen w-screen">
-      <NavarOnly class="md:h-28 h-20 bg-sky-950 fixed w-full z-20 top-0 start-0"/>
-      <div class="md:mt-28 mt-20 md:p-10 w-screen flex md:h-[44.3rem] h-[36.3rem] bg-slate-950">
-        <div class="backdrop md:w-[45rem] md:h-[35.3rem] md:mt-[25px] md:rounded-2xl md:ml-[380px] h-[480px] w-full mt-24">
+  <div class="h-screen w-screen">
+    <NavarOnly class="md:h-28 h-20 bg-sky-950 fixed w-full z-20 top-0 start-0"/>
+      <div class="md:mt-28 mt-20 md:p-10 w-screen flex md:h-[44.3rem] h-[36.3rem]">
+        <div class="md:w-[45rem] md:h-[35.3rem] md:mt-[25px] md:rounded-2xl md:ml-[380px] h-[480px] w-full mt-24">
           <h1 class="bg-green-400 w-full text-white text-center h-10 pt-2  md:rounded-t-2xl text-[20px]">Todo App</h1>
           <div class="flex mt-4">
             <input type="text" v-model="task" required class="shadow appearance-none border rounded
              w-full py-2 px-3 mr-4 text-grey-darker ml-2 text-center" placeholder="Add Todo">
             <button class="flex-no-shrink border-2 rounded text-teal border-teal hover:text-white hover:bg-teal mr-2 bg-green-400 text-gray-500 w-10 text-[20px] h-10" @click="addTask">+</button>
           </div>
-          <div class="flex my-4 w-full md:pl-64 pl-20">
-            <i class="bi bi-search text-white pr-2"></i>
-            <input type="text" placeholder="Search task" id="search" v-model="searchQuery" class="border-b rounded-2xl text-center">
+          <div class="flex flex-col items-center my-4">
+            <i class="bi bi-search text-white"><input type="text" placeholder="Search task" id="search" v-model="searchQuery" class="ml-2 border-b rounded-2xl text-center"></i>     
           </div>
           <div class="relative shadow-md mt-2 overflow-y-scroll md:max-h-[55%] max-h-[240px]">
             <table class="ml-2 md:w-[98%] w-[96%] text-sm text-left overflow-hidden rtl:text-right text-gray-500 dark:text-gray-400 rounded-2xl">
@@ -46,9 +45,9 @@
             </button>
           </div>
         </div>
-      </div>
     </div>
-  </template>
+  </div>
+</template>
   <script setup>
     import { ref, onMounted, computed } from 'vue';
     import NavarOnly from '../components/NavarOnly.vue';

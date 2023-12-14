@@ -1,47 +1,43 @@
 <template>
-    <div class="h-screen w-screen">
-        <NavarOnly class="md:h-28 h-20 bg-sky-950 fixed w-full z-20 top-0 start-0"/>
-        <div class="md:mt-28 mt-20 md:p-10 w-screen flex md:h-[44.3rem] h-[36.3rem] bg-slate-950">
-            <div class="backdrop md:w-[40rem] md:h-[30.3rem] md:mt-[25px] md:rounded-2xl md:ml-[410px] h-[480px] w-full mt-24">
-                <h1 class="bg-green-400 w-full text-white text-center h-10 pt-2  md:rounded-t-2xl text-[20px]">Simple Alarm Clock</h1>
-                
-                <!--simple live clock-->
-                <div class="border-2 border-black w-full h-64 pt-10 text-white text-center">
-                    <h1 class="text-2xl font-semibold mb-4">Live Clock</h1>
-                    <p class="text-4xl font-bold" ref="clock">{{ currentTime }} {{ amOrPm }}</p>
-                    <div class="mt-4 md:max-h-20 overflow-y-scroll h-[80px]">
-                        <p>Selected Alarm Time</p>
-                        <ul class="flex flex-col max:h-4">
-                            <li v-for="(alarmTime, index) in selectedAlarmTimes" :key="index" class="text-xl font-semibold">
-                                {{ formatAlarmTime(alarmTime) }}
-                                <span class="cursor-pointer" @click="removeAlarm(index)">
-                                    <i class="bi bi-trash3"></i>
-                                </span>
-                            </li>
-                        </ul>
-                    </div>
-                </div> 
-                
-                <!--setting time-->
-                <div class="flex flex-col">
-                    <div class="grid md:gap-x-4 gap-x-2 lg:grid-cols-2 sm-grid-cols-2 grid-cols-2">
-                        <div class="my-4 md:ml-8">
-                            <label for="hours" class="mr-2 md:ml-0 ml-2 text-white">Hours:</label>
-                            <input v-model="hours" id="hours" type="number" class="border p-2 w-[60%] rounded-2xl text-center"/>
-                        </div>     
-                        <div class="my-4">
-                            <label for="minutes" class="mr-2  text-white">Minutes:</label>
-                            <input v-model="minutes" id="minutes" type="number" class="border p-2 w-[60%] rounded-2xl text-center"/>
-                        </div>
-                    </div>
-                    <button @click="startAlarm" class="bg-green-400 text-gray-50 hover:text-gray-500 hover:bg-teal-500 py-2 px-4 rounded-md md:mt-8 mt-2 md:w-60 w-52 md:ml-52 ml-24">
-                        Start Alarm
-                    </button>
-                </div>
+  <div class="h-screen w-screen">
+    <NavarOnly class="md:h-28 h-20 bg-sky-950 fixed w-full z-20 top-0 start-0"/>
+    <div class="md:mt-28 mt-20 md:p-10 w-screen flex md:h-[44.3rem] h-[36.3rem]">
+      <div class="md:w-[45rem] md:h-[35.3rem] md:mt-[25px] md:rounded-2xl md:ml-[380px] h-[480px] w-full mt-24">
+        <h1 class="bg-green-400 w-full text-white text-center h-10 pt-2  rounded-t-2xl text-[20px]">Simple Alarm Clock</h1>
+        <div class=" w-full h-64 pt-10 text-white text-center">
+          <h1 class="text-2xl font-semibold mb-4">Live Clock</h1>
+          <p class="text-4xl font-bold" ref="clock">{{ currentTime }} {{ amOrPm }}</p>
+          <div class="mt-4 md:max-h-20 overflow-y-scroll h-[80px]">
+            <p>Selected Alarm Time</p>
+            <ul class="flex flex-col max:h-4">
+              <li v-for="(alarmTime, index) in selectedAlarmTimes" :key="index" class="text-xl font-semibold">
+                {{ formatAlarmTime(alarmTime) }}
+                <span class="cursor-pointer" @click="removeAlarm(index)">
+                  <i class="bi bi-trash3"></i>
+                </span>
+              </li>
+            </ul>
+          </div>
+          <div class="flex flex-col">
+            <div class="grid md:gap-x-4 gap-x-2 lg:grid-cols-2 sm-grid-cols-2 grid-cols-2">
+              <div class="my-4 md:ml-8">
+                <label for="hours" class="mr-2 md:ml-0 ml-2 text-white">Hours:</label>
+                <input v-model="hours" id="hours" type="number" class="border p-2 w-[60%] rounded-2xl text-center text-black"/>
+              </div>     
+              <div class="my-4">
+                <label for="minutes" class="mr-2  text-white">Minutes:</label>
+                <input v-model="minutes" id="minutes" type="number" class="border p-2 w-[60%] rounded-2xl text-center text-black"/>
+              </div>
             </div>
-        </div>
+            <button @click="startAlarm" class="bg-green-400 text-gray-50 hover:text-gray-500 hover:bg-teal-500 py-2 px-4 rounded-b-2xl md:mt-8">
+              Start Alarm
+            </button>
+          </div>
+        </div> 
+      </div>
     </div>
-  </template>
+  </div>
+</template>
   
   <script setup>
   import { ref, onMounted, computed } from 'vue';
